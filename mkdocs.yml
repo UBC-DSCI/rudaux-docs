@@ -1,6 +1,11 @@
 site_name: Rudaux
 nav:
   - Home: index.md
+  - Modules: modules.md
+  - Examples:
+      - Functions: examples/functions.md
+      - Objects: examples/objects.md
+  - Configuration: config.md
 theme:
   name: yeti
   custom_dir: theme
