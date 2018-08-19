@@ -1,0 +1,6 @@
+site_name: Rudaux
+nav:
+  - Home: index.md
+theme:
+  name: yeti
+  custom_dir: theme
