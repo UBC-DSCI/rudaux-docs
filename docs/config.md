@@ -5,7 +5,40 @@ A configuration file should be included in the same directory where nbgrader ope
 1. Save the options in a file named **rudaux_config.py**. This will keep your options for each program separate.
 2. Save the options in your **nbgrader_config.py** file. This will allow you to only maintain one config file.
 
-**rudaux_config.py**:
+## Configuration Options
+
+### Canvas
+
+<dl>
+  <dt><code>c.Canvas.course_id</code></dt>
+  <dd>The Canvas ID of your course. This is an integer.</dd>
+  <dt><code>c.Canvas.course_url</code></dt>
+  <dd>The URL of your Canvas distribution.</dd>
+  <dt><code>c.Canvas.token_name</code></dt>
+  <dd>The name of the environment variable holding your Canvas Access Token. A Canvas access token can be generated from [Account] -> [Settings] -> [ + New Access Token], at <code>https://&lt;your_canvas_url&gt;/profile/settings</code>.</dd>
+  <dt><code>c.Canvas.external_tool_name</code></dt>
+  <dd>The name of your external tool in Canvas. For more information, read the <a href='https://github.com/jupyterhub/ltiauthenticator#canvas'>ltiauthenticator documentation</a>.</dt>
+  <dt><code>c.Canvas.external_tool_level</code></dt>
+  <dd>The 'level' of your external tool. In Canvas, an external tool can be created at <a href='https://canvas.instructure.com/doc/api/file.tools_intro.html'>various levels</a>.</dd>
+</dl>
+
+_Note: The external tool parameters are required to locate the ID of your external tool in Canvas, and attach it to your assignment links. This links your LTI Consumer Key and LTI Consumer Secret to each launch request, authenticating your users._
+
+### GitHub
+
+<dl>
+  <dt><code>c.GitHub.ins_repo_url</code></dt>
+  <dd>The location of your instructors repository where you will keep your solutions, graded assignments, and gradebook.db. This can be a bare URL, an HTTPS git URL, or an SSH git URL.</dd>
+  <dt><code>c.GitHub.stu_repo_url</code></dt>
+  <dd>The location of your public student repository this will contain the release versions of your assignments This can be a bare URL, an HTTPS git URL, or an SSH git URL.</dd>
+  <dt><code>c.GitHub.assignment_release_path</code></dt>
+  <dd>The subpath of the student repository where assignments will be deposited. Defaults to 'materials' if none is specified.</dd>
+</dl>
+
+> To be continued...
+> In the meantime, please see the sample config below with relevant comments.
+
+**Sample rudaux_config.py**:
 
 ```python
 #=======================================#
