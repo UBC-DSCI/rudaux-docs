@@ -109,6 +109,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#configuring-rudaux">Configuring Rudaux</a></li>
+            <li><a href="#configuration-options">Configuration Options</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -119,7 +120,37 @@
 <li>Save the options in a file named <strong>rudaux_config.py</strong>. This will keep your options for each program separate.</li>
 <li>Save the options in your <strong>nbgrader_config.py</strong> file. This will allow you to only maintain one config file.</li>
 </ol>
-<p><strong>rudaux_config.py</strong>:</p>
+<h2 id="configuration-options">Configuration Options</h2>
+<h3 id="canvas">Canvas</h3>
+<dl>
+  <dt><code>c.Canvas.course_id</code></dt>
+  <dd>The Canvas ID of your course. This is an integer.</dd>
+  <dt><code>c.Canvas.course_url</code></dt>
+  <dd>The URL of your Canvas distribution.</dd>
+  <dt><code>c.Canvas.token_name</code></dt>
+  <dd>The name of the environment variable holding your Canvas Access Token. A Canvas access token can be generated from [Account] -> [Settings] -> [ + New Access Token], at <code>https://&lt;your_canvas_url&gt;/profile/settings</code>.</dd>
+  <dt><code>c.Canvas.external_tool_name</code></dt>
+  <dd>The name of your external tool in Canvas. For more information, read the <a href='https://github.com/jupyterhub/ltiauthenticator#canvas'>ltiauthenticator documentation</a>.</dt>
+  <dt><code>c.Canvas.external_tool_level</code></dt>
+  <dd>The 'level' of your external tool. In Canvas, an external tool can be created at <a href='https://canvas.instructure.com/doc/api/file.tools_intro.html'>various levels</a>.</dd>
+</dl>
+
+<p><em>Note: The external tool parameters are required to locate the ID of your external tool in Canvas, and attach it to your assignment links. This links your LTI Consumer Key and LTI Consumer Secret to each launch request, authenticating your users.</em></p>
+<h3 id="github">GitHub</h3>
+<dl>
+  <dt><code>c.GitHub.ins_repo_url</code></dt>
+  <dd>The location of your instructors repository where you will keep your solutions, graded assignments, and gradebook.db. This can be a bare URL, an HTTPS git URL, or an SSH git URL.</dd>
+  <dt><code>c.GitHub.stu_repo_url</code></dt>
+  <dd>The location of your public student repository this will contain the release versions of your assignments This can be a bare URL, an HTTPS git URL, or an SSH git URL.</dd>
+  <dt><code>c.GitHub.assignment_release_path</code></dt>
+  <dd>The subpath of the student repository where assignments will be deposited. Defaults to 'materials' if none is specified.</dd>
+</dl>
+
+<blockquote>
+<p>To be continued...
+In the meantime, please see the sample config below with relevant comments.</p>
+</blockquote>
+<p><strong>Sample rudaux_config.py</strong>:</p>
 <div class="codehilite"><pre><span></span><span class="c1">#=======================================#</span>
 <span class="c1">#                 Canvas                #</span>
 <span class="c1">#=======================================#</span>
