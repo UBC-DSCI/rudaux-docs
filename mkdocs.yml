@@ -4,3 +4,5 @@ nav:
 theme:
   name: yeti
   custom_dir: theme
+markdown_extensions:
+  - codehilite
