@@ -8,9 +8,54 @@
 
 */
 
-pre {
-  background-color: rgb(45, 49, 58);
+/* Gist Embed Formatting */
+
+.gist-container {
+  padding: 1rem;
 }
+
+.gist .blob-num,
+.table-striped > tbody > tr > td {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.table > tbody > tr > td {
+  border-top: none !important;
+}
+
+/* Code Block Formatting */
+
+pre {
+  color: #e7e9db;
+  background-color: rgb(45, 49, 58);
+  overflow-x: auto;
+  font-family: 'Fira Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url(../fonts/FiraCode-Regular.woff2);
+}
+
+/* Defined List Formatting */
+dt {
+  font-weight: normal;
+}
+
+dt span {
+  text-decoration: underline;
+}
+
+dd {
+  margin-left: 2em;
+}
+
+dl dd {
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+}
+
+/* Syntax Highlighting */
 
 .codehilite .hll {
   background-color: #4f424c;
