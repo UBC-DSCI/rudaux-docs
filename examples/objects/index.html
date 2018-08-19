@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        
+        
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+        <link rel="manifest" href="../../img/site.webmanifest">
+        <link rel="mask-icon" href="../../img/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="../../img/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        
+        <title>Objects - Rudaux</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Rudaux</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../modules/">Modules</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../functions/">Functions</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Objects</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../config/">Configuration</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../functions/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../config/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#examples-of-objects">Examples of Objects</a></li>
+            <li><a href="#lti-launch-request">LTI Launch Request</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="examples-of-objects">Examples of Objects</h1>
+<h2 id="lti-launch-request">LTI Launch Request</h2>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;query_string&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;custom_next&quot;</span><span class="p">:</span> <span class="s2">&quot;/jupyter/hub/user-redirect/git-pull?repo=https://github.com/binder-examples/requirements&amp;subPath=index.ipynb&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;form_data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;oauth_consumer_key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;redacted&gt;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;oauth_signature_method&quot;</span><span class="p">:</span> <span class="s2">&quot;HMAC-SHA1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;oauth_timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;1529516978&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;oauth_nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;redacted&gt;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;oauth_version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;context_id&quot;</span><span class="p">:</span> <span class="s2">&quot;df6178b861774822eec73639c1f5808ebf9b3259&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;context_label&quot;</span><span class="p">:</span> <span class="s2">&quot;DSCI100&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;context_title&quot;</span><span class="p">:</span> <span class="s2">&quot;DSCI 100&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_api_domain&quot;</span><span class="p">:</span> <span class="s2">&quot;canvas.ubc.ca&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_assignment_id&quot;</span><span class="p">:</span> <span class="s2">&quot;151504&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_assignment_points_possible&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_assignment_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Assignment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_course_id&quot;</span><span class="p">:</span> <span class="s2">&quot;5394&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_enrollment_state&quot;</span><span class="p">:</span> <span class="s2">&quot;active&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;185091&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_user_login_id&quot;</span><span class="p">:</span> <span class="s2">&quot;OB2D4G5QJS00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_canvas_workflow_state&quot;</span><span class="p">:</span> <span class="s2">&quot;claimed&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;custom_next&quot;</span><span class="p">:</span> <span class="s2">&quot;/jupyter/hub/user-redirect/git-pull?repo=https://github.com/binder-examples/requirements&amp;subPath=index.ipynb&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_ims_lis_basic_outcome_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://canvas.ubc.ca/api/lti/v1/tools/2399/ext_grade_passback&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_lti_assignment_id&quot;</span><span class="p">:</span> <span class="s2">&quot;657aadda-f21d-41a3-9125-2fc67dc1e07e&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_outcome_data_values_accepted&quot;</span><span class="p">:</span> <span class="s2">&quot;url,text&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_outcome_result_total_score_accepted&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_outcome_submission_submitted_at_accepted&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_outcomes_tool_placement_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://canvas.ubc.ca/api/lti/v1/turnitin/outcomes_placement/2399&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ext_roles&quot;</span><span class="p">:</span> <span class="s2">&quot;urn:lti:instrole:ims/lis/Instructor,urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Instructor,urn:lti:sysrole:ims/lis/User&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;launch_presentation_document_target&quot;</span><span class="p">:</span> <span class="s2">&quot;iframe&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;launch_presentation_locale&quot;</span><span class="p">:</span> <span class="s2">&quot;en-CA&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;launch_presentation_return_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://canvas.ubc.ca/courses/5394/external_content/success/external_tool_redirect&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lis_outcome_service_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://canvas.ubc.ca/api/lti/v1/tools/2399/grade_passback&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lis_person_contact_email_primary&quot;</span><span class="p">:</span> <span class="s2">&quot;samuel.hinshaw@gmail.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lis_person_name_family&quot;</span><span class="p">:</span> <span class="s2">&quot;Hinshaw&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lis_person_name_full&quot;</span><span class="p">:</span> <span class="s2">&quot;Samuel Hinshaw&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lis_person_name_given&quot;</span><span class="p">:</span> <span class="s2">&quot;Samuel&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lis_person_sourcedid&quot;</span><span class="p">:</span> <span class="s2">&quot;90088155&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lti_message_type&quot;</span><span class="p">:</span> <span class="s2">&quot;basic-lti-launch-request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lti_version&quot;</span><span class="p">:</span> <span class="s2">&quot;LTI-1p0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;oauth_callback&quot;</span><span class="p">:</span> <span class="s2">&quot;about:blank&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;resource_link_id&quot;</span><span class="p">:</span> <span class="s2">&quot;954efa27cf26a83ebcb782eeb701c904cc93cd6d&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;resource_link_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Assignment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="s2">&quot;Instructor&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tool_consumer_info_product_family_code&quot;</span><span class="p">:</span> <span class="s2">&quot;canvas&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tool_consumer_info_version&quot;</span><span class="p">:</span> <span class="s2">&quot;cloud&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tool_consumer_instance_contact_email&quot;</span><span class="p">:</span> <span class="s2">&quot;notifications@instructure.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tool_consumer_instance_guid&quot;</span><span class="p">:</span> <span class="s2">&quot;WiYEKZJIYozJ60jtONj9XJdFwpxtMAY075lLT4pj:canvas-lms&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tool_consumer_instance_name&quot;</span><span class="p">:</span> <span class="s2">&quot;The University of British Columbia&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;56adf6953222e4ac2d851361684c73f392b55260&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;user_image&quot;</span><span class="p">:</span> <span class="s2">&quot;https://canvas.ubc.ca/images/thumbnails/760593/qr2ss6cgf7q1SCbCH8axswflnIfFZep5XNIkNTEB&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;oauth_signature&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;redacted&gt;&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
