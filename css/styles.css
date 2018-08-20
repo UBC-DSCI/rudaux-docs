@@ -23,6 +23,12 @@
   border-top: none !important;
 }
 
+/* Code block overflow (not wrap!!) */
+pre {
+  white-space: pre;
+  word-wrap: normal;
+}
+
 /* Code Block Formatting */
 
 pre {
