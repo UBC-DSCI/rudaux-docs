@@ -146,6 +146,59 @@
   <dd>The subpath of the student repository where assignments will be deposited. Defaults to 'materials' if none is specified.</dd>
 </dl>
 
+<h3 id="course">Course</h3>
+<dl>
+  <dt><code>c.Course.grading_image</code></dt>
+  <dd>
+    The docker image you will use to run nbgrader autograding. This should essentially be a copy of your students' docker image, plus nbgrader. Examples from UBC's DSCI 100:
+    <ul>
+      <li>
+        <a href='https://github.com/UBC-DSCI/docker-stacks/blob/master/r-dsci-100/Dockerfile'>Student Container Dockerfile</a>
+      </li>
+      <li>
+        <a href='https://github.com/UBC-DSCI/docker-stacks/blob/master/r-dsci-grading/Dockerfile'>Marking Container Dockerfile</a>
+      </li>
+    </ul>
+  </dd>
+  <dt><code>c.Course.assignments</code></dt>
+  <dd>
+    <p>A list of your assignments with the following fields:</p>
+    <p><em>Note</em>: Rudaux parses datetimes with the pendulum library&mdash;acceptable date strings are listed in the <a href='https://pendulum.eustace.io/docs/#parsing'>pendulum docs</a>. For example, if 'duedate' were '2019-03-14' and 'duetime' were '22:00:00', they would be joined and parsed as '2019-03-14T22:00:00'.</p>
+    <ul>
+      <li>
+        <dl>
+          <dt><code>name</code></dt>
+          <dd><em>String.</em> Required. Unique. The name of the assignment. Must conform to nbgrader naming conventions (i.e. must be the name of the folder containing the jupyter notebook).</dt>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><code>duedate</code></dt>
+          <dd><em>String.</em> Required. The date the assignment is due.</dt>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><code>duetime</code></dt>
+          <dd><em>String.</em> Optional. The time the assignment is due. Defaults to 23:59:59.</dt>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><code>points</code></dt>
+          <dd><em>Int.</em> Optional. The maximum possible points for this assignment.</dt>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><code>manual</code></dt>
+          <dd><em>Bool.</em> Optional. Does the assignment require manual input (i.e. TA feedback)? If so, feedback reports will not be generated and grades will not be submitted to Canvas automatically. </dt>
+        </dl>
+      </li>
+    </ul>
+  </dd>
+</dl>
+
 <blockquote>
 <p>To be continued...
 In the meantime, please see the sample config below with relevant comments.</p>
