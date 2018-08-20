@@ -61,6 +61,10 @@ dl dd {
   margin-top: 0.2em;
 }
 
+.extra-dl-info {
+  margin-top: 0.5em;
+}
+
 /* Syntax Highlighting */
 
 .codehilite .hll {

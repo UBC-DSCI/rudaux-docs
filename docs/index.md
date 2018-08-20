@@ -1,6 +1,20 @@
 # Documentation for Rudaux
 
-Course Operations:
+Welcome to the documentation for rudaux!
+
+> For information on the motivation behind and development of rudaux, please read my blog post _[Designing Rudaux](https://samhinshaw.com/blog/designing-rudaux)_. For information on how to use Rudaux to integrate Canvas and JupyterHub, please read _[Using Rudaux](https://samhinshaw.com/blog/using-rudaux)_.
+
+## Setup
+
+Before setting up rudaux, it is important to have the proper infrastructure in place. Please see the [DSCI 100 infrastructure repository](https://github.ubc.ca/UBC-DSCI/dsc100-infra) for our reproducible infrastructure provisioning workflow.
+
+Rudaux needs a configuration file to operate. Please read the [configuration](config) documentation for more information and a sample config file.
+
+1. Log in to the server you will be executing rudaux commands on.
+2. Clone your instructors repository containing your config file and master (source) assignments.
+3. Initialize rudaux.
+
+## Course Operations
 
 - Find external tool ID in Canvas
 - Pull student list from Canvas and sync with nbgrader.
