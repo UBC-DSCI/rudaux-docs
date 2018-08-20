@@ -66,6 +66,9 @@
                             <li >
                                 <a href="../../modules/">Modules</a>
                             </li>
+                            <li >
+                                <a href="../../config/">Configuration</a>
+                            </li>
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -78,9 +81,6 @@
     <a href="./">Objects</a>
 </li>
                                 </ul>
-                            </li>
-                            <li >
-                                <a href="../../config/">Configuration</a>
                             </li>
                         </ul>
 
@@ -95,8 +95,8 @@
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../config/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -110,6 +110,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#examples-of-objects">Examples of Objects</a></li>
             <li><a href="#lti-launch-request">LTI Launch Request</a></li>
+            <li><a href="#sample-rudaux_configpy">Sample rudaux_config.py</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -171,6 +172,162 @@
     <span class="nt">&quot;oauth_signature&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;redacted&gt;&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
+
+
+<h2 id="sample-rudaux_configpy">Sample rudaux_config.py</h2>
+<div class="codehilite"><pre><span></span><span class="c1">#=======================================#</span>
+<span class="c1">#                 Canvas                #</span>
+<span class="c1">#=======================================#</span>
+
+<span class="c1"># The URL of your Canvas installation</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">canvas_url</span> <span class="o">=</span> <span class="s1">&#39;https://canvas.ubc.ca&#39;</span>
+
+<span class="c1"># The ID of your course in Canvas. If you open your course in canvas, this will</span>
+<span class="c1"># appear as:</span>
+<span class="c1"># https://canvas.institution.edu/courses/&lt;course_id&gt;/assignments</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">course_id</span> <span class="o">=</span> <span class="mi">5394</span>
+
+
+<span class="c1"># The name of the environment variable storing you Canvas API Token</span>
+<span class="c1"># https://canvas.instructure.com/doc/api/file.oauth.html#manual-token-generation</span>
+<span class="c1"># Defaults to &#39;CANVAS_TOKEN&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">token_name</span> <span class="o">=</span> <span class="s1">&#39;CANVAS_TOKEN&#39;</span>
+
+<span class="c1"># The name of the external tool in Canvas which represents your JupyterHub server</span>
+<span class="c1"># Defaults to &quot;Jupyter&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">external_tool_name</span> <span class="o">=</span> <span class="s1">&#39;Jupyter&#39;</span>
+
+<span class="c1"># The level at which your external tool was created in Canvas</span>
+<span class="c1"># Can be &#39;course&#39;, &#39;account&#39; or &#39;group&#39;</span>
+<span class="c1"># Defaults to &quot;course&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Canvas</span><span class="o">.</span><span class="n">external_tool_level</span> <span class="o">=</span> <span class="s1">&#39;course&#39;</span>
+
+<span class="c1">#=======================================#</span>
+<span class="c1">#                 GitHub                #</span>
+<span class="c1">#=======================================#</span>
+
+<span class="c1"># The location of your instructors repository where you will keep your</span>
+<span class="c1"># solutions, graded assignments, and gradebook.db</span>
+<span class="c1"># c.GitHub.ins_repo_url = &#39;https://github.ubc.ca/hinshaws/dsci_100_instructors&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">GitHub</span><span class="o">.</span><span class="n">ins_repo_url</span> <span class="o">=</span> <span class="s1">&#39;git@github.ubc.ca:hinshaws/DSCI_100_instructors.git&#39;</span>
+
+<span class="c1"># The location of your public student repository</span>
+<span class="c1"># this will contain the release versions of your assignments</span>
+<span class="c1"># c.GitHub.stu_repo_url = &#39;https://github.com/samhinshaw/dsci-100&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">GitHub</span><span class="o">.</span><span class="n">stu_repo_url</span> <span class="o">=</span> <span class="s1">&#39;git@github.com:samhinshaw/dsci-100.git&#39;</span>
+
+<span class="c1"># the subpath of the student repository where assignments will be deposited.</span>
+<span class="c1"># defaults to &#39;materials&#39; if none is specified</span>
+<span class="n">c</span><span class="o">.</span><span class="n">GitHub</span><span class="o">.</span><span class="n">assignment_release_path</span> <span class="o">=</span> <span class="s1">&#39;materials&#39;</span>
+
+<span class="c1"># The following options are not currently supported</span>
+
+<span class="c1"># default if not specified is &#39;GITHUB_PAT&#39;</span>
+<span class="c1"># c.GitHub.github_token_name = &#39;GHE_PAT&#39;</span>
+
+<span class="c1"># You can specify multiple keys, just paste the url you specified above into the URL fields</span>
+<span class="c1"># c.GitHub.token_names = [</span>
+<span class="c1">#     {</span>
+<span class="c1">#         &quot;url&quot;: &quot;github.com&quot;,</span>
+<span class="c1">#         &quot;token_name&quot;: &quot;GITHUB_PAT&quot;</span>
+<span class="c1">#     },</span>
+<span class="c1">#     {</span>
+<span class="c1">#         &quot;domain&quot;: &quot;github.ubc.ca&quot;,</span>
+<span class="c1">#         &quot;token_name&quot;: &quot;GHE_PAT&quot;</span>
+<span class="c1">#     },</span>
+<span class="c1"># ]</span>
+
+<span class="c1">#=======================================#</span>
+<span class="c1">#               JupyterHub              #</span>
+<span class="c1">#=======================================#</span>
+
+<span class="c1"># The URL that your JupyterHub is located at</span>
+<span class="n">c</span><span class="o">.</span><span class="n">JupyterHub</span><span class="o">.</span><span class="n">hub_url</span> <span class="o">=</span> <span class="s1">&#39;https://hub-prod-dsci.stat.ubc.ca&#39;</span>
+<span class="c1"># Any hub prefix that you have specified. In your jupyterhub_config.py, this</span>
+<span class="c1"># would be named &quot;c.JupyterHub.base_url&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">JupyterHub</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;/jupyter&#39;</span>
+
+<span class="c1"># The location of your students&#39; persistent storage</span>
+<span class="c1"># c.JupyterHub.storage_path = &#39;/tank/home/dsci100&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">JupyterHub</span><span class="o">.</span><span class="n">storage_path</span> <span class="o">=</span> <span class="s1">&#39;/nfs/hub-prod-dsc/&#39;</span> <span class="c1"># temporarily changed</span>
+
+<span class="c1"># Is your persistent storage solution ZFS-based? (default: False)</span>
+<span class="c1"># If so, we will utilize snapshotting to ensure that we are using a precise copy</span>
+<span class="c1"># of the students&#39; notebooks at the time the assignment closes. If not, we will</span>
+<span class="c1"># simply read from the student directories.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">JupyterHub</span><span class="o">.</span><span class="n">zfs</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="c1">#=======================================#</span>
+<span class="c1">#                 Course                #</span>
+<span class="c1">#=======================================#</span>
+
+<span class="c1"># Defaults to $HOME/tmp</span>
+<span class="c1"># c.Course.tmp_dir = &#39;~/tmp&#39;</span>
+
+<span class="c1"># Timezone for which your due dates will be set and parsed</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Course</span><span class="o">.</span><span class="n">timezone</span> <span class="o">=</span> <span class="s1">&#39;US/Pacific&#39;</span>
+
+<span class="c1"># The docker image you will use to run nbgrader autograding.</span>
+<span class="c1"># This should essentially be a copy of your students&#39; docker image, plus nbgrader.</span>
+<span class="c1"># We wrote our Dockerfile to inherit from our student&#39;s docker image.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Course</span><span class="o">.</span><span class="n">grading_image</span> <span class="o">=</span> <span class="s1">&#39;samhinshaw/r-dsci-grading&#39;</span>
+<span class="c1"># c.Course.grading_image = &#39;ubcdsci/r-dsci-grading&#39;</span>
+
+  <span class="c1">#===============#</span>
+  <span class="c1">#  Assignments  #</span>
+  <span class="c1">#===============#</span>
+
+<span class="c1"># These must match the name of the folder containing the jupyter notebook in</span>
+<span class="c1"># your &#39;source&#39; directory. If no points specified, defaults to 0 points.</span>
+<span class="c1"># NOTE: If no time specified for due date, defaults to 23:59:59.</span>
+<span class="c1"># We parse dates with the pendulum library, so you can see what date inputs are</span>
+<span class="c1"># acceptable in their docs: https://pendulum.eustace.io/docs/#rfc-3339</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Course</span><span class="o">.</span><span class="n">assignments</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;week_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-14&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;manual&quot;</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;homework_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-15&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;11:00:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ps1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-15&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;15:31:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;week_2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-16&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;homework_2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-16&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;06:00:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="mi">6</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;week_6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-18&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;manual&quot;</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;week_7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duedate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-19&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duetime&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+<span class="p">]</span>
 </pre></div></div>
         </div>
 
