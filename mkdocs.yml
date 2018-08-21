@@ -7,7 +7,7 @@ copyright: '&copy; 2018 Sam Hinshaw, BSD-3'
 nav:
   - Home: index.md
   - CLI: cli.md
-  - Modules: modules.md
+  - Classes: classes.md
   - Configuration: config.md
   - Examples:
       - Functions: examples/functions.md
