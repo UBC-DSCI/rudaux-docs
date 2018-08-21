@@ -21,7 +21,7 @@
         <meta name="msapplication-config" content="../img/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         
-        <title>Configuration - Rudaux Docs</title>
+        <title>Config - Rudaux Docs</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -67,23 +67,13 @@
                                 <a href="../cli/">CLI</a>
                             </li>
                             <li >
-                                <a href="../modules/">Modules</a>
+                                <a href="../api/">API</a>
                             </li>
                             <li class="active">
-                                <a href="./">Configuration</a>
+                                <a href="./">Config</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="../examples/functions/">Functions</a>
-</li>
-                                    
-<li >
-    <a href="../examples/objects/">Objects</a>
-</li>
-                                </ul>
+                            <li >
+                                <a href="../examples/">Examples</a>
                             </li>
                         </ul>
 
@@ -94,12 +84,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../modules/">
+                                <a rel="next" href="../api/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../examples/functions/">
+                                <a rel="prev" href="../examples/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,8 +105,18 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#configuring-rudaux">Configuring Rudaux</a></li>
-            <li><a href="#assumptions">Assumptions</a></li>
-            <li><a href="#configuration-options">Configuration Options</a></li>
+            <li>
+              <a href="#assumptions">
+                Assumptions
+                
+              </a>
+            </li>
+            <li>
+              <a href="#configuration-options">
+                Configuration Options
+                
+              </a>
+            </li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -245,6 +245,20 @@
       Default: <code>False</code>
     </p>
   </dd>
+  <dt><code>c.JupyterHub.zfs_regex</code> - <em>str</em></dt>
+  <dd>
+    A regular expression that matches your snapshot timestamp. Use None if the snapshot name is a timestamp.
+    <p class='extra-dl-info'>
+      Default: <code>r'\d{4}-\d{2}-\d{2}-\d{4}'</code>
+    </p>
+  </dd>
+  <dt><code>c.JupyterHub.zfs_datetime_pattern</code> - <em>str</em></dt>
+  <dd>
+    The pattern of your timestamp in token format, for pendulum parsing: https://pendulum.eustace.io/docs/#tokens
+    <p class='extra-dl-info'>
+      Default: <code>'YYYY-MM-DD-HHmm'</code>
+    </p>
+  </dd>
 </dl>
 
 <h3 id="course">Course</h3>
@@ -329,7 +343,7 @@
 
         <footer class="col-md-12">
             <hr>
-                <p>BSD-3</p>
+                <p>&copy; 2018 Sam Hinshaw, BSD-3</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

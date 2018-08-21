@@ -67,23 +67,13 @@
                                 <a href="./">CLI</a>
                             </li>
                             <li >
-                                <a href="../modules/">Modules</a>
+                                <a href="../api/">API</a>
                             </li>
                             <li >
-                                <a href="../config/">Configuration</a>
+                                <a href="../config/">Config</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="../examples/functions/">Functions</a>
-</li>
-                                    
-<li >
-    <a href="../examples/objects/">Objects</a>
-</li>
-                                </ul>
+                            <li >
+                                <a href="../examples/">Examples</a>
                             </li>
                         </ul>
 
@@ -99,7 +89,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../modules/">
+                                <a rel="prev" href="../api/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,27 +105,99 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#command-line-interface">Command-Line Interface</a></li>
+            <li>
+              <a href="#initialize-course">
+                Initialize Course
+                
+              </a>
+            </li>
+            <li>
+              <a href="#grade-assignment">
+                Grade Assignment
+                
+              </a>
+            </li>
+            <li>
+              <a href="#submit-assignment">
+                Submit Assignment
+                
+              </a>
+            </li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="command-line-interface">Command-Line Interface</h1>
-<p>Rudaux was designed to be used from the command line or from within Python. The command line functions are essentially preset scripts that we expect users to need to run.</p>
+<p>Rudaux was designed to be used from the command line or from within Python. The command line interface provides quick access rudaux's most commonly needed functionality.</p>
+<p>The rudaux CLI works in a 2-step process:</p>
+<ol>
+<li>A <a href="https://github.com/samhinshaw/rudaux/blob/master/bin/rudaux">command parser</a> parses rudaux's CLI commands and executes the corresponding functions.</li>
+<li>A <a href="https://github.com/samhinshaw/rudaux/blob/master/rudaux/commands.py">command module</a> that contains function definitions to be called by the command parser.</li>
+</ol>
+<h2 id="initialize-course">Initialize Course</h2>
+<h4 id="command">Command:</h4>
 <div class="codehilite"><pre><span></span>rudaux init
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>rudaux grade
+<h4 id="help-text">Help Text:</h4>
+<div class="codehilite"><pre><span></span>usage: rudaux init [-h] [--dir DIRECTORY] [--auto] [--overwrite]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --dir DIRECTORY  The directory containing configuration files.
+  --auto, -a       Tell rudaux this is not an interactive shell, do not
+                   prompt!
+  --overwrite, -o  Suppress overwrite warnings and nuke any existing
+                   directories with abandon!
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>rudaux submit
+<h2 id="grade-assignment">Grade Assignment</h2>
+<p><strong>Note:</strong> The functionality to upload generated feedback is the only piece of rudaux that has yet to be implemented. Currently, rudaux only uploads the student's grade to Canvas.</p>
+<h4 id="command_1">Command:</h4>
+<div class="codehilite"><pre><span></span>rudaux grade <span class="s1">&#39;assignment_name&#39;</span>
+</pre></div>
+
+
+<h4 id="help-text_1">Help Text:</h4>
+<div class="codehilite"><pre><span></span>usage: rudaux grade [-h] [--dir DIRECTORY] [--auto] [--manual] name
+
+positional arguments:
+  name             Name of the assignment to grade.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --dir DIRECTORY  The directory containing configuration files.
+  --auto, -a       Tell rudaux this is not an interactive shell, do not
+                   prompt!
+  --manual, -m     Manual grading is necessary.
+</pre></div>
+
+
+<h2 id="submit-assignment">Submit Assignment</h2>
+<p><strong>Note:</strong> The functionality to upload generated feedback is the only piece of rudaux that has yet to be implemented. Currently, rudaux only uploads the student's grade to Canvas.</p>
+<h4 id="command_2">Command:</h4>
+<div class="codehilite"><pre><span></span>rudaux submit <span class="s1">&#39;assignment_name&#39;</span>
+</pre></div>
+
+
+<h4 id="help-text_2">Help Text:</h4>
+<div class="codehilite"><pre><span></span>usage: rudaux submit [-h] [--no-feedback] [--dir DIRECTORY] name
+
+positional arguments:
+  name               Name of the assignment to grade.
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --no-feedback, -n  Skip feedback generation.
+  --dir DIRECTORY    The directory containing configuration files.
 </pre></div></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>BSD-3</p>
+                <p>&copy; 2018 Sam Hinshaw, BSD-3</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

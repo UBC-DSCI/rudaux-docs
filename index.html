@@ -67,23 +67,13 @@
                                 <a href="cli/">CLI</a>
                             </li>
                             <li >
-                                <a href="modules/">Modules</a>
+                                <a href="api/">API</a>
                             </li>
                             <li >
-                                <a href="config/">Configuration</a>
+                                <a href="config/">Config</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="examples/functions/">Functions</a>
-</li>
-                                    
-<li >
-    <a href="examples/objects/">Objects</a>
-</li>
-                                </ul>
+                            <li >
+                                <a href="examples/">Examples</a>
                             </li>
                         </ul>
 
@@ -114,16 +104,30 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#documentation-for-rudaux">Documentation for Rudaux</a></li>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#setup">Setup</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <li><a href="#course-operations">Course Operations</a></li>
+        <li class="main active"><a href="#rudaux-documentation">Rudaux Documentation</a></li>
+            <li>
+              <a href="#installation">
+                Installation
+                
+              </a>
+            </li>
+            <li>
+              <a href="#setup">
+                Setup
+                
+              </a>
+            </li>
+            <li>
+              <a href="#usage">
+                Usage
+                
+              </a>
+            </li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="documentation-for-rudaux">Documentation for Rudaux</h1>
+<h1 id="rudaux-documentation">Rudaux Documentation</h1>
 <p>Welcome to the documentation for rudaux!</p>
 <p>For information on the motivation behind and development of rudaux, please read my blog post <em><a href="https://samhinshaw.com/blog/designing-rudaux">Designing Rudaux</a></em>. For information on how to use Rudaux to integrate Canvas and JupyterHub, please read <em><a href="https://samhinshaw.com/blog/using-rudaux">Using Rudaux</a></em>.</p>
 <h2 id="installation">Installation</h2>
@@ -147,30 +151,13 @@
 <h2 id="usage">Usage</h2>
 <h3 id="command-line-interface">Command-Line Interface</h3>
 <p>See <a href="cli">command-line interface</a>.</p>
-<h3 id="module-import">Module Import</h3>
-<p>See <a href="modules">modules</a>.</p>
-<h2 id="course-operations">Course Operations</h2>
-<ul>
-<li>Find external tool ID in Canvas</li>
-<li>Pull student list from Canvas and sync with nbgrader.</li>
-<li>Add missing students to nbgrader database</li>
-<li>Delete students from database that have withdrawn from course.</li>
-<li>Pull assignments from config file.</li>
-<li>Add assignments to nbgrader database.</li>
-<li>Create student version of assignments with nbgrader assign.</li>
-<li>Commit these files to the instructors repository &amp; push.</li>
-<li>Copy the student version to the public student repository.</li>
-<li>Commit these files to the students repository &amp; push.</li>
-<li>Create assignments in Canvas.</li>
-<li>Generate urlencoded nbgitpuller links to JupyterHub, referencing the relevant notebook in the public students repository.</li>
-<li>Schedule grading.</li>
-<li>Add cron jobs to crontab which will initiate autograding at the assignment due date.</li>
-</ul></div>
+<h3 id="python-api">Python API</h3>
+<p>See <a href="api">API</a>.</p></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>BSD-3</p>
+                <p>&copy; 2018 Sam Hinshaw, BSD-3</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -249,5 +236,5 @@
 
 <!--
 MkDocs version : 1.0.1
-Build Date UTC : 2018-08-21 02:18:01
+Build Date UTC : 2018-08-21 20:38:47
 -->

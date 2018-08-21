@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Sam Hinshaw">
+        
+        
+        
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+        <link rel="manifest" href="../img/site.webmanifest">
+        <link rel="mask-icon" href="../img/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="../img/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        
+        <title>API - Rudaux Docs</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Rudaux Docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../cli/">CLI</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">API</a>
+                            </li>
+                            <li >
+                                <a href="../config/">Config</a>
+                            </li>
+                            <li >
+                                <a href="../examples/">Examples</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../cli/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../config/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/samhinshaw/rudaux/"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#rudaux-api-documentation">Rudaux API Documentation</a></li>
+            <li>
+              <a href="#course">
+                Course
+                
+              </a>
+            </li>
+            <li>
+              <a href="#assignment">
+                Assignment
+                
+              </a>
+            </li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="rudaux-api-documentation">Rudaux API Documentation</h1>
+<p>API documentation for rudaux's primary classes: <code>Course</code> and Assignment`. For some examples of how to use these functions, please see <a href="../usage">API Usage</a>.</p>
+<h2 id="course">Course</h2>
+<p>Course object for manipulating an entire Canvas/JupyterHub/nbgrader course</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">rudaux</span> <span class="kn">import</span> <span class="n">Course</span>
+</pre></div>
+
+
+<h3 id="instantiation">Instantiation</h3>
+<div class="codehilite"><pre><span></span><span class="n">Course</span><span class="p">(</span>
+  <span class="n">course_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">auto</span><span class="o">=</span><span class="bp">False</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<dl>
+  <dt><strong>Parameters</strong></dt>
+  <dd>
+    <dl>
+      <dt><code>course_dir</code> - <em>str</em></dt>
+      <dd>
+        <p><span class="definition">The course directory containing your course configuration files.</span> (<em>rudaux_config.py</em> and/or <em>nbgrader_config.py</em>) This should also be your nbgrader directory. Currently, it is assumed that this is your private instructors' repository. If none is provided, defaults to the current working directory.</p>
+        <p><em>Default</em>: <code>os.getcwd()</code></p>
+      </dd>
+      <dt><code>auto</code> - <em>bool</em></dt>
+      <dd>
+        <p class='definition'>Suppress all prompts, automatically answering yes.</p>
+        <p><em>Default</em>: <code>False</code></p>
+      </dd>
+    </dl>
+  </dd>
+  <dt><strong>Returns</strong> - <em>Course</em></dt>
+  <dd>
+    <p>A Course object for manipulating an entire Canvas/JupyterHub/nbgrader course.</p>
+  </dd>  
+</dl>
+
+<h3 id="methods">Methods</h3>
+<dl>
+  <dt>
+    <code>.get_external_tool_id()</code> &rarr; <em>Course</em>
+  </dt>
+  <dd>
+    <span class="definition">Find the ID of the external tool created in Canvas that represents your JupyterHub server.</span>
+    <br>
+    This is necessary to link your LTI launch keys to assignment links created in Canvas.
+  </dd>
+  <dt>
+    <code>.get_students_from_canvas()</code> &rarr; <em>Course</em>
+  </dt>
+  <dd>
+    <p class='definition'>Get the course student list from Canvas.</p>
+  </dd>
+  <dt>
+    <code>.sync_nbgrader()</code> &rarr; <em>Course</em>
+  </dt>
+  <dd>
+    <p class='definition'>Sync student and assignment lists between nbgrader and Canvas.</p>
+    <ul>
+      <li>Add students into nbgrader gradebook that are present in Canvas.</li>
+      <li>Remove students from nbgrader gradebook that are not present in Canvas.</li>
+      <li>Add assignments to gradebook which are present in config, but not in gradebook.</li>
+      <li>Remove assignments from gradebook which are no longer present in config.</li>
+    </ul>
+  </dd>
+  <dt>
+    <code>.assign(assignments, overwrite)</code> &rarr; <em>Course</em>
+    &nbsp;
+    <span class="badge badge-primary">Commits</span>
+    &nbsp;
+    <span class="badge badge-primary">Pushes</span>
+  </dt>
+  <dd>
+    <p class='definition'>Assign assignments for a course.</p>
+    <dl>
+      <dt><strong>Parameters</strong></dt>
+      <dd>
+        <dl>
+          <dt><code>assignments</code> - <em>Union[List[str], str]</em></dt>
+          <dd> 
+            <span class="definition">The name or names of the assignments you wish to assign.</span>
+            <br>
+            Defaults to all assignments.
+          </dd>
+          <dt><code>overwrite</code> - <em>bool</em></dt>
+          <dd> 
+            <p class="definition">Bypass overwrite prompts and nuke preexisting directories.</p>
+            <p><em>Default</em>: <code>False</code></p>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+  </dd>
+  <dt>
+    <code>.create_canvas_assignments()</code> &rarr; <em>Course</em>
+  </dt>
+  <dd>
+    <p class='definition'>Create assignments in Canvas.</p>
+  </dd>
+  <dt>
+    <code>.schedule_grading()</code> &rarr; <em>Course</em>
+  </dt>
+  <dd>
+    <p class='definition'>Schedule auto-grading cron jobs for all assignments.</p>
+  </dd>
+</dl>
+
+<h2 id="assignment">Assignment</h2>
+<p>Assignment object for manipulating individual assignments.</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">rudaux</span> <span class="kn">import</span> <span class="n">Assignment</span>
+</pre></div>
+
+
+<h3 id="instantiation_1">Instantiation</h3>
+<div class="codehilite"><pre><span></span><span class="n">Assignment</span><span class="p">(</span>
+  <span class="n">name</span><span class="p">,</span>
+  <span class="n">duedate</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+  <span class="n">duetime</span><span class="o">=</span><span class="s1">&#39;23:59:59&#39;</span><span class="p">,</span>
+  <span class="n">points</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">manual</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+  <span class="n">course</span><span class="o">=</span><span class="bp">None</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<dl>
+  <dt><strong>Parameters</strong></dt>
+  <dd>
+    <dl>
+      <dt><code>name</code> - <em>str</em></dt>
+      <dd>
+        <p>
+          <span class="definition">The assignment's name.</span>
+          <br>
+          This should be compatible with nbgrader's file naming convention.
+        </p>
+        <p><em>Required.</em> Example: <code>'homework_1'</code></p>
+      </dd>
+      <dt><code>duedate</code> - <em>str</em></dt>
+      <dd>
+        <p class='definition'>The assignment's due date.</p>
+        <p><em>Required.</em> Example: <code>'2019-03-14'</code></p>
+      </dd>
+      <dt><code>duetime</code> - <em>str</em></dt>
+      <dd>
+        <p class='definition'>The assignment's due time.</p>
+        <p><em>Default</em>: <code>'23:59:59'</code></p>
+      </dd>
+      <dt><code>points</code> - <em>int</em></dt>
+      <dd>
+        <p class='definition'>The number of points the assignment is worth.</p>
+        <p><em>Default</em>: <code>1</code></p>
+      </dd>
+      <dt><code>manual</code> - <em>bool</em></dt>
+      <dd>
+        <p class='definition'>Is manual grading required?</p>
+        <p><em>Default</em>: <code>False</code></p>
+      </dd>
+      <dt><code>course</code> - <em>Course</em></dt>
+      <dd>
+        <p class='definition'>The course the assignment belongs to.</p>
+        <p><em>Optional.</em> Recommended usage is to subclass Assignment with the course as a class variable.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt><strong>Returns</strong> - <em>Assignment</em></dt>
+  <dd>
+    <p>An assignment object for performing different operations on a given assignment.</p>
+  </dd>
+</dl>
+
+<h3 id="methods_1">Methods</h3>
+<dl>
+  <dt><code>.update_or_create_canvas_assignment()</code> &rarr; <em>str</em></dt>
+  <dd>
+    <p>
+      <span class="definition">Search for an assignment in Canvas by assignment name.</span> 
+      <br>
+      If an assignment is found, update it. If not, create it.
+    </p>
+    <dl>
+      <dt><strong>Returns</strong></dt>
+      <dd>
+        <p>A reporting status, whether the assignment was updated or created.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt><code>.schedule_grading()</code> &rarr; <em>Dict[str, str]</em></dt>
+  <dd>
+    <p>
+      <span class="definition">Schedule grading of an assignment by adding cron jobs to initialize auto-grading.</span> 
+      <br>
+      The job will be scheduled to run at the assignment's due datetime.
+    </p>
+    <ul>
+      <li>If no auto-grading job for that assignment exists in cron, create a job.</li>
+      <li>If an auto-grading job for that assignment is already scheduled in cron, update the job.</li>
+    </ul>
+    <p>The job takes the following format:</p>
+    <ol>
+      <li>Initialize SSH agent</li>
+      <li>Add instructors & students SSH-keys to SSH agent</li>
+      <li>Run `rudaux grade` with output redirected to a log file in the instructors' repository</li>
+    </ol>
+    <dl>
+      <dt><strong>Returns</strong></dt>
+      <dd>
+        <p>A status reporting dictionary with the keys 'close_time' and 'action'.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt>
+    <code>.collect()</code> &rarr; <em>Assignment</em>
+    &nbsp;
+    <span class="badge badge-primary">Commits</span>
+    &nbsp;
+    <span class="badge badge-primary">Pushes</span>
+  </dt>
+  <dd>
+    <p class='definition'>Collect student copies an assignment.</p>
+    <p>Copy your students' notebooks from the fileserver into the instructors repo <code>submitted/</code> directory.  This also creates a submission in the gradebook on behalf of each student, which is necessary for nbgrader to record grades in the gradebook.</p>
+    <p>If the student fileserver is a ZFS filesystem, the closest snapshot that occurred after the due date will be used. This requires <code>c.JupyterHub.zfs_regex</code> and <code>c.JupyterHub.zfs_datetime_pattern</code> to be set in the course configuration.</p>
+  </dd>
+  <dt>
+    <code>.grade()</code> &rarr; <em>Assignment</em>
+    &nbsp;
+    <span class="badge badge-primary">Commits</span>
+    &nbsp;
+    <span class="badge badge-primary">Pushes</span>
+  </dt>
+  <dd>
+    <p class='definition'>Auto-grade an assignment within a docker container.</p>
+  </dd>
+  <dt>
+    <code>.feedback()</code> &rarr; <em>Assignment</em>
+    &nbsp;
+    <span class="badge badge-primary">Commits</span>
+    &nbsp;
+    <span class="badge badge-primary">Pushes</span>
+  </dt>
+  <dd>
+    <p class='definition'>Generate feedback reports for student assignments.</p>
+  </dd>
+  <dt>
+    <code>.submit()</code> &rarr; <em>Assignment</em>
+    &nbsp;
+    <span class="badge badge-primary">Commits</span>
+    &nbsp;
+    <span class="badge badge-primary">Pushes</span>
+  </dt>
+  <dd>
+    <p class='definition'>Upload students' grades to Canvas.</p>
+    <p>
+      <strong>Note:</strong> The functionality to upload generated feedback is the only piece of rudaux that has yet to be implemented. Currently, <code>.submit()</code> only uploads the student's grade to Canvas.
+    </p>
+  </dd>
+</dl></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>&copy; 2018 Sam Hinshaw, BSD-3</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
