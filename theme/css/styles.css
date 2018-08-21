@@ -52,6 +52,13 @@ dt span {
   text-decoration: underline;
 }
 
+/* Style descriptive list badges */
+
+dt .badge {
+  text-decoration: none;
+  border-radius: 0;
+}
+
 dd {
   margin-left: 2em;
 }
