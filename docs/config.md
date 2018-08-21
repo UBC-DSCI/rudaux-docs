@@ -130,6 +130,20 @@ _Note_: `external_tool_name` and `external_tool_level` are used to locate the ID
       Default: <code>False</code>
     </p>
   </dd>
+  <dt><code>c.JupyterHub.zfs_regex</code> - <em>str</em></dt>
+  <dd>
+    A regular expression that matches your snapshot timestamp. Use None if the snapshot name is a timestamp.
+    <p class='extra-dl-info'>
+      Default: <code>r'\d{4}-\d{2}-\d{2}-\d{4}'</code>
+    </p>
+  </dd>
+  <dt><code>c.JupyterHub.zfs_datetime_pattern</code> - <em>str</em></dt>
+  <dd>
+    The pattern of your timestamp in token format, for pendulum parsing: https://pendulum.eustace.io/docs/#tokens
+    <p class='extra-dl-info'>
+      Default: <code>'YYYY-MM-DD-HHmm'</code>
+    </p>
+  </dd>
 </dl>
 
 ### Course

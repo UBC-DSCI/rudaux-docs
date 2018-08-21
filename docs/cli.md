@@ -1,29 +1,11 @@
 # Command-Line Interface
 
-Rudaux was designed to be used from the command line or from within Python. The command line functions are aliases for groups of commonly needed functions.
+Rudaux was designed to be used from the command line or from within Python. The command line interface provides quick access rudaux's most commonly needed functionality.
 
-#### Command:
+The rudaux CLI works in a 2-step process:
 
-```sh
-rudaux
-```
-
-#### Help Text:
-
-```text
-usage: rudaux [-h] {init,grade,submit} ...
-
-Manage your JupyterHub/Canvas/nbgrader course with Rudaux.
-
-optional arguments:
-  -h, --help           show this help message and exit
-
-Subcommands:
-  {init,grade,submit}  Commands rudaux can process.
-    init               Initialize or update the course.
-    grade              Grade an assignment.
-    submit             Generate feedback for and submit an assignment.
-```
+1. A [command parser](https://github.com/samhinshaw/rudaux/blob/master/bin/rudaux) parses rudaux's CLI commands and executes the corresponding functions.
+2. A [command module](https://github.com/samhinshaw/rudaux/blob/master/rudaux/commands.py) that contains function definitions to be called by the command parser.
 
 ## Initialize Course
 
@@ -47,21 +29,9 @@ optional arguments:
                    directories with abandon!
 ```
 
-#### Python Code Invoked:
-
-```py
-course = Course(course_dir=args.directory, auto=args.auto)
-
-course                                   \
-  .get_external_tool_id()                \
-  .get_students_from_canvas()            \
-  .sync_nbgrader()                       \
-  .assign(overwrite=args.overwrite)      \
-  .create_canvas_assignments()           \
-  .schedule_grading()
-```
-
 ## Grade Assignment
+
+<strong>Note:</strong> The functionality to upload generated feedback is the only piece of rudaux that has yet to be implemented. Currently, rudaux only uploads the student's grade to Canvas.
 
 #### Command:
 
@@ -85,47 +55,9 @@ optional arguments:
   --manual, -m     Manual grading is necessary.
 ```
 
-#### Python Code Invoked:
-
-```py
-course = Course(course_dir=args.directory, auto=args.auto)
-
-course = course               \
-  .get_external_tool_id()     \
-  .get_students_from_canvas() \
-  .sync_nbgrader()
-
-# find assignment in config assignment list
-assignment = list(
-  filter(lambda assn: assn.name == args.assignment_name, course.assignments)
-)
-
-if len(assignment) <= 0:
-  sys.exit(f"No assignment named \"{args.assignment_name}\" found")
-else:
-  # Take the first result.
-  assignment = assignment[0]
-  # But notify if more than one was found
-  # Though this should never happen--assignment names must be unique.
-  if len(assignment) > 1:
-    print(
-      f"Multiple assignments named \"{args.assignment_name}\" were found. Grading the first one!"
-    )
-
-# collect and grade the assignment
-assignment = assignment \
-  .collect()            \
-  .grade()
-
-# and if no manual feedback is required, generate feedback reports
-# and submit grades
-if not args.manual:
-  assignment    \
-    .feedback() \
-    .submit()
-```
-
 ## Submit Assignment
+
+<strong>Note:</strong> The functionality to upload generated feedback is the only piece of rudaux that has yet to be implemented. Currently, rudaux only uploads the student's grade to Canvas.
 
 #### Command:
 
@@ -145,35 +77,4 @@ optional arguments:
   -h, --help         show this help message and exit
   --no-feedback, -n  Skip feedback generation.
   --dir DIRECTORY    The directory containing configuration files.
-```
-
-#### Python Code Invoked:
-
-```py
-course = Course(course_dir=args.directory)
-
-course = course               \
-  .get_external_tool_id()     \
-  .get_students_from_canvas() \
-  .sync_nbgrader()
-
-# find assignment in config assignment list
-assignment = list(
-  filter(lambda assn: assn.name == args.assignment_name, course.assignments)
-)
-
-if len(assignment) <= 0:
-  sys.exit(f"No assignment named \"{args.assignment_name}\" found")
-else:
-  # Take the first result
-  assignment = assignment[0]
-  # If we run into this situation, there's probably a lot of other weird things going wrong already.
-  if len(assignment) > 1:
-    print(
-      f"Multiple assignments named \"{args.assignment_name}\" were found. Grading the first one!"
-    )
-
-  assignment    \
-    .feedback() \
-    .submit()
 ```

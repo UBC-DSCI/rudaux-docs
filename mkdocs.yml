@@ -7,11 +7,9 @@ copyright: '&copy; 2018 Sam Hinshaw, BSD-3'
 nav:
   - Home: index.md
   - CLI: cli.md
-  - Classes: classes.md
-  - Configuration: config.md
-  - Examples:
-      - Functions: examples/functions.md
-      - Objects: examples/objects.md
+  - API: api.md
+  - Config: config.md
+  - Examples: examples.md
 theme:
   name: yeti
   custom_dir: theme

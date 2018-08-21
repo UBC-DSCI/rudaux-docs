@@ -48,7 +48,8 @@ dt {
   font-weight: normal;
 }
 
-dt span {
+dt span,
+dd .definition {
   text-decoration: underline;
 }
 
@@ -57,6 +58,10 @@ dt span {
 dt .badge {
   text-decoration: none;
   border-radius: 0;
+  line-height: 1.428571429;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  padding: 1px 7px;
+  font-size: 12px;
 }
 
 dd {
