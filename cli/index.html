@@ -4,28 +4,28 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         
         
         
         
 
         
-        <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
-        <link rel="manifest" href="./img/site.webmanifest">
-        <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+        <link rel="manifest" href="../img/site.webmanifest">
+        <link rel="mask-icon" href="../img/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../img/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="./img/browserconfig.xml">
+        <meta name="msapplication-config" content="../img/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         
-        <title>Rudaux</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
+        <title>CLI - Rudaux</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../css/styles.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -33,13 +33,13 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -53,35 +53,35 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">Rudaux</a>
+                    <a class="navbar-brand" href="..">Rudaux</a>
                 </div>
 
                 <!-- Expanded navigation -->
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
                             <li class="active">
-                                <a href=".">Home</a>
+                                <a href="./">CLI</a>
                             </li>
                             <li >
-                                <a href="cli/">CLI</a>
+                                <a href="../modules/">Modules</a>
                             </li>
                             <li >
-                                <a href="modules/">Modules</a>
-                            </li>
-                            <li >
-                                <a href="config/">Configuration</a>
+                                <a href="../config/">Configuration</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="examples/functions/">Functions</a>
+    <a href="../examples/functions/">Functions</a>
 </li>
                                     
 <li >
-    <a href="examples/objects/">Objects</a>
+    <a href="../examples/objects/">Objects</a>
 </li>
                                 </ul>
                             </li>
@@ -93,13 +93,13 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="disabled">
-                                <a rel="next" >
+                            <li >
+                                <a rel="next" href="..">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="cli/">
+                                <a rel="prev" href="../modules/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -111,58 +111,23 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#documentation-for-rudaux">Documentation for Rudaux</a></li>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#setup">Setup</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <li><a href="#course-operations">Course Operations</a></li>
+        <li class="main active"><a href="#command-line-interface">Command-Line Interface</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="documentation-for-rudaux">Documentation for Rudaux</h1>
-<p>Welcome to the documentation for rudaux!</p>
-<p>For information on the motivation behind and development of rudaux, please read my blog post <em><a href="https://samhinshaw.com/blog/designing-rudaux">Designing Rudaux</a></em>. For information on how to use Rudaux to integrate Canvas and JupyterHub, please read <em><a href="https://samhinshaw.com/blog/using-rudaux">Using Rudaux</a></em>.</p>
-<h2 id="installation">Installation</h2>
-<div class="codehilite"><pre><span></span>pip install rudaux
+<h1 id="command-line-interface">Command-Line Interface</h1>
+<p>Rudaux was designed to be used from the command line or from within Python. The command line functions are essentially preset scripts that we expect users to need to run.</p>
+<div class="codehilite"><pre><span></span>rudaux init
 </pre></div>
 
 
-<h2 id="setup">Setup</h2>
-<p>Before setting up rudaux, it is important to have the proper infrastructure in place. Please see the <a href="https://github.ubc.ca/UBC-DSCI/dsc100-infra">DSCI 100 infrastructure repository</a> for our reproducible infrastructure provisioning workflow.</p>
-<p><em>Note</em>: rudaux currently requires a fork of nbgrader to work properly (<a href="https://github.com/samhinshaw/rudaux/issues/7">more information</a>):</p>
-<div class="codehilite"><pre><span></span>pip install git+git://github.com/samhinshaw/nbgrader.git
+<div class="codehilite"><pre><span></span>rudaux grade
 </pre></div>
 
 
-<p>Once your servers are set up and your dependencies installed, rudaux needs a configuration file to operate. Please read the <a href="config">configuration</a> documentation for more information and a sample config file.</p>
-<ol>
-<li>Log in to the server you will be executing rudaux commands on.</li>
-<li>Clone your instructors repository containing your config file and master (source) assignments.</li>
-<li>Initialize rudaux.</li>
-</ol>
-<h2 id="usage">Usage</h2>
-<h3 id="command-line-interface">Command-Line Interface</h3>
-<p>See <a href="cli">command-line interface</a>.</p>
-<h3 id="module-import">Module Import</h3>
-<p>See <a href="modules">modules</a>.</p>
-<h2 id="course-operations">Course Operations</h2>
-<ul>
-<li>Find external tool ID in Canvas</li>
-<li>Pull student list from Canvas and sync with nbgrader.</li>
-<li>Add missing students to nbgrader database</li>
-<li>Delete students from database that have withdrawn from course.</li>
-<li>Pull assignments from config file.</li>
-<li>Add assignments to nbgrader database.</li>
-<li>Create student version of assignments with nbgrader assign.</li>
-<li>Commit these files to the instructors repository &amp; push.</li>
-<li>Copy the student version to the public student repository.</li>
-<li>Commit these files to the students repository &amp; push.</li>
-<li>Create assignments in Canvas.</li>
-<li>Generate urlencoded nbgitpuller links to JupyterHub, referencing the relevant notebook in the public students repository.</li>
-<li>Schedule grading.</li>
-<li>Add cron jobs to crontab which will initiate autograding at the assignment due date.</li>
-</ul></div>
+<div class="codehilite"><pre><span></span>rudaux submit
+</pre></div></div>
         </div>
 
         <footer class="col-md-12">
@@ -170,11 +135,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -242,8 +207,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.1
-Build Date UTC : 2018-08-21 01:45:20
--->
