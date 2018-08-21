@@ -1,6 +1,7 @@
 site_name: Rudaux
 nav:
   - Home: index.md
+  - CLI: cli.md
   - Modules: modules.md
   - Configuration: config.md
   - Examples:
