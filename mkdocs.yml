@@ -3,7 +3,7 @@ repo_url: https://github.com/samhinshaw/rudaux/
 edit_uri: ''
 site_description: Documentation for rudaux, a python module for administering a course using JupyterHub, Canvas, and nbgrader.
 site_author: Sam Hinshaw
-copyright: BSD-3
+copyright: '&copy; 2018 Sam Hinshaw, BSD-3'
 nav:
   - Home: index.md
   - CLI: cli.md
