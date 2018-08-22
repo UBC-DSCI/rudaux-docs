@@ -1,4 +1,6 @@
-# Rudaux Documentation
+# Rudaux
+
+Welcome to the documentation for rudaux!
 
 Rudaux helps you programmatically administer a course by integrating:
 
