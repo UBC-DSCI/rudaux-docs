@@ -1,13 +1,3 @@
-/*
-
-    Name:       Base16 Oceanic Next Dark
-    Author:     Dmitri Voronianski (http://pixelhunter.me)
-
-    Pygments template by Jan T. Sott (https://github.com/idleberg)
-    Created with Base16 Builder by Chris Kempson (https://github.com/chriskempson/base16-builder)
-
-*/
-
 /* Gist Embed Formatting */
 
 .gist-container {
@@ -75,6 +65,18 @@ dl dd {
 
 .extra-dl-info {
   margin-top: 0.5em;
+}
+
+.showcase {
+  border-left: 5px solid #d6d6d6;
+  padding: 1em 0.3em 1em 1em;
+  margin: 1em;
+  background-color: #f0f0f0;
+  color: #424242;
+}
+
+.showcase p {
+  margin: 0;
 }
 
 /* Syntax Highlighting */

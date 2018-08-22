@@ -128,8 +128,30 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="rudaux-documentation">Rudaux Documentation</h1>
-<p>Welcome to the documentation for rudaux!</p>
-<p>For information on the motivation behind and development of rudaux, please read my blog post <em><a href="https://samhinshaw.com/blog/designing-rudaux">Designing Rudaux</a></em>. For information on how to use Rudaux to integrate Canvas and JupyterHub, please read <em><a href="https://samhinshaw.com/blog/using-rudaux">Using Rudaux</a></em>.</p>
+<p>Rudaux helps you programmatically administer a course by integrating:</p>
+<ul>
+<li><a href="https://www.canvaslms.com/">Canvas</a> - a learning management system</li>
+<li><a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a> - a multi-user Jupyter notebook Server</li>
+<li><a href="https://github.com/jupyter/nbgrader">nbgrader</a> - a Jupyter notebook auto-grader</li>
+<li><a href="https://github.com/data-8/nbgitpuller">nbgitpuller</a> - a JupyterHub extension to pull Jupyter notebooks from git repositories</li>
+</ul>
+<p>Rudaux was designed to simplify course management generally, but there are a few operations in particular that would be nearly impossible without rudaux.</p>
+<ul>
+<li>Syncing students and assignments between Canvas and nbgrader.</li>
+<li>Creating assignments in Canvas with JupyterHub/nbgitpuller links.</li>
+<li>Scheduled automated grading of Jupyter notebooks with nbgrader.</li>
+</ul>
+<p>Rudaux is named after the French artist and astronomer Lucien Rudaux, a pioneer in space artistry and one of the first artists to paint Jupiter.</p>
+<div class="showcase">
+  <p>
+    For information on the motivation behind and development of rudaux, please read 
+    <a href="https://samhinshaw.com/blog/designing-rudaux"><em>Designing Rudaux</em></a>.
+    <br>
+    For information on how to use Rudaux to integrate Canvas and JupyterHub, please read 
+    <a href="https://samhinshaw.com/blog/using-rudaux"><em>Using Rudaux</em></a>.
+  </p>
+</div>
+
 <h2 id="installation">Installation</h2>
 <div class="codehilite"><pre><span></span>pip install rudaux
 </pre></div>
@@ -151,8 +173,14 @@
 <h2 id="usage">Usage</h2>
 <h3 id="command-line-interface">Command-Line Interface</h3>
 <p>See <a href="cli">command-line interface</a>.</p>
+<div class="codehilite"><pre><span></span>rudaux <span class="o">{</span>init, grade, submit<span class="o">}</span>
+</pre></div>
+
+
 <h3 id="python-api">Python API</h3>
-<p>See <a href="api">API</a>.</p></div>
+<p>See <a href="api">API</a>.</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">rudaux</span> <span class="kn">import</span> <span class="n">Course</span><span class="p">,</span> <span class="n">Assignment</span>
+</pre></div></div>
         </div>
 
         <footer class="col-md-12">
@@ -236,5 +264,5 @@
 
 <!--
 MkDocs version : 1.0.1
-Build Date UTC : 2018-08-21 20:38:47
+Build Date UTC : 2018-08-22 21:44:33
 -->
