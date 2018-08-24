@@ -94,7 +94,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/samhinshaw/rudaux/"><i class="fa fa-github"></i> GitHub</a>
+                                <a href="https://github.com/UBC-DSCI/rudaux/"><i class="fa fa-github"></i> GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -120,6 +120,12 @@
             <li>
               <a href="#usage">
                 Usage
+                
+              </a>
+            </li>
+            <li>
+              <a href="#contributing">
+                Contributing
                 
               </a>
             </li>
@@ -159,8 +165,8 @@
 
 
 <h2 id="setup">Setup</h2>
-<p>Before setting up rudaux, it is important to have the proper infrastructure in place. Please see the <a href="https://github.ubc.ca/UBC-DSCI/dsc100-infra">DSCI 100 infrastructure repository</a> for our reproducible infrastructure provisioning workflow.</p>
-<p><em>Note</em>: rudaux currently requires a fork of nbgrader to work properly (<a href="https://github.com/samhinshaw/rudaux/issues/7">more information</a>):</p>
+<p>Before setting up rudaux, it is important to have the proper infrastructure in place. Please see the <a href="https://github.com/UBC-DSCI/dsci-100-infra">DSCI 100 infrastructure repository</a> for our reproducible infrastructure provisioning workflow.</p>
+<p><em>Note</em>: rudaux currently requires a fork of nbgrader to work properly (<a href="https://github.com/UBC-DSCI/rudaux/issues/7">more information</a>):</p>
 <div class="codehilite"><pre><span></span>pip install git+git://github.com/samhinshaw/nbgrader.git
 </pre></div>
 
@@ -181,7 +187,17 @@
 <h3 id="python-api">Python API</h3>
 <p>See <a href="api">API</a>.</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">rudaux</span> <span class="kn">import</span> <span class="n">Course</span><span class="p">,</span> <span class="n">Assignment</span>
-</pre></div></div>
+</pre></div>
+
+
+<h2 id="contributing">Contributing</h2>
+<ol>
+<li>Clone this repository.</li>
+<li>Install <a href="https://www.mkdocs.org/#installation">MkDocs</a>.</li>
+<li>In this repo's directory, start the MkDocs development server: <code>mkdocs serve</code>.</li>
+<li>Edit source docs in <a href="docs">docs/</a>, and see the dev server hot reload your changes!</li>
+<li>Build and deploy to GitHub Pages with <code>mkdocs gh-deploy</code>.</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">
@@ -265,5 +281,5 @@
 
 <!--
 MkDocs version : 1.0.1
-Build Date UTC : 2018-08-22 22:07:16
+Build Date UTC : 2018-08-24 21:32:53
 -->
