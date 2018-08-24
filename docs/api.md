@@ -1,6 +1,6 @@
 # Rudaux API Documentation
 
-API documentation for rudaux's primary classes: `Course` and Assignment`. For some examples of how to use these functions, please see [API Usage](../usage).
+API documentation for rudaux's primary classes: `Course` and `Assignment`. For some examples of how to use these functions, please see [API Usage](../usage).
 
 ## Course
 
