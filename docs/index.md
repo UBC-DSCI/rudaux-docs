@@ -66,3 +66,11 @@ See [API](api).
 ```py
 from rudaux import Course, Assignment
 ```
+
+## Contributing
+
+1. Clone this repository.
+2. Install [MkDocs](https://www.mkdocs.org/#installation).
+3. In this repo's directory, start the MkDocs development server: `mkdocs serve`.
+4. Edit source docs in [docs/](docs), and see the dev server hot reload your changes!
+5. Build and deploy to GitHub Pages with `mkdocs gh-deploy`.
