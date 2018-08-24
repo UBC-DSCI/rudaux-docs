@@ -1,6 +1,8 @@
 # Rudaux API Documentation
 
-API documentation for rudaux's primary classes: `Course` and Assignment`. For some examples of how to use these functions, please see [API Usage](../usage).
+If you need more direct control over rudaux, the Python API is preferred over the CLI. For some examples of how to use these functions, please see [Examples](../examples).
+
+Rudaux's has two primary classes: `Course` and `Assignment`.
 
 ## Course
 

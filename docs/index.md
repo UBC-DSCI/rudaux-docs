@@ -35,9 +35,9 @@ pip install rudaux
 
 ## Setup
 
-Before setting up rudaux, it is important to have the proper infrastructure in place. Please see the [DSCI 100 infrastructure repository](https://github.ubc.ca/UBC-DSCI/dsc100-infra) for our reproducible infrastructure provisioning workflow.
+Before setting up rudaux, it is important to have the proper infrastructure in place. Please see the [DSCI 100 infrastructure repository](https://github.com/UBC-DSCI/dsci-100-infra) for our reproducible infrastructure provisioning workflow.
 
-_Note_: rudaux currently requires a fork of nbgrader to work properly ([more information](https://github.com/samhinshaw/rudaux/issues/7)):
+_Note_: rudaux currently requires a fork of nbgrader to work properly ([more information](https://github.com/UBC-DSCI/rudaux/issues/7)):
 
 ```sh
 pip install git+git://github.com/samhinshaw/nbgrader.git

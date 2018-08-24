@@ -2,7 +2,7 @@
 
 ## Assumptions
 
-Rudaux makes some important assumptions. In the future we hope to abstract away these assumptions. For reproducible provisioning of a compatible course infrastructure, see the [DSCI 100 course infrastructure repository](https://github.ubc.ca/UBC-DSCI/dsc100-infra).
+Rudaux makes some important assumptions. In the future we hope to abstract away these assumptions. For reproducible provisioning of a compatible course infrastructure, see the [DSCI 100 course infrastructure repository](https://github.com/UBC-DSCI/dsci-100-infra).
 
 <ul>
   <li>
@@ -14,12 +14,12 @@ Rudaux makes some important assumptions. In the future we hope to abstract away 
   </li>
   <li>
     You wish rudaux to pull, commit, and push to git on your behalf.
-    <a href='https://github.com/samhinshaw/rudaux/issues/4'>This may be made optional</a>.
+    <a href='https://github.com/ubc-dsci/rudaux/issues/4'>This may be made optional</a>.
   </li>
   <li>You have a Canvas Access Token in an environment variable accessible to rudaux.</li>
   <li>Because autograding is containerized, it is assumed your user will be able to execute <code>docker run</code> commands. </li>
   <li><em>If you schedule autograding</em>: The machine you are executing rudaux commands on will be the same machine that autograding is executed on.</li>
-  <li><em>If you wish to perform ZFS snapshotting</em>: Rudaux does not perform ZFS snapshotting, but will look for a snapshot with the name of the assignment in question. <a href='https://github.com/samhinshaw/rudaux/issues/2'>Scheduling ZFS snapshots may be implemented</a>.</li>
+  <li><em>If you wish to perform ZFS snapshotting</em>: Rudaux does not perform ZFS snapshotting, but will look for a snapshot with the name of the assignment in question. <a href='https://github.com/ubc-dsci/rudaux/issues/2'>Scheduling ZFS snapshots may be implemented</a>.</li>
   <li>You have SSH keys or deploy keys set up for your repositories on the server you run rudaux. If you use HTTPS rather than SSH for git remotes, you will be prompted for your password. However, this will impair autograding.</li>
 </ul>
 

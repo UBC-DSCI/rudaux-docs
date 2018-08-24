@@ -4,8 +4,8 @@ Rudaux was designed to be used from the command line or from within Python. The 
 
 The rudaux CLI works in a 2-step process:
 
-1. A [command parser](https://github.com/samhinshaw/rudaux/blob/master/bin/rudaux) parses rudaux's CLI commands and executes the corresponding functions.
-2. A [command module](https://github.com/samhinshaw/rudaux/blob/master/rudaux/commands.py) that contains function definitions to be called by the command parser.
+1. A [command parser](https://github.com/UBC-DSCI/rudaux/blob/master/bin/rudaux) parses rudaux's CLI commands and executes the corresponding functions.
+2. A [command module](https://github.com/UBC-DSCI/rudaux/blob/master/rudaux/commands.py) that contains function definitions to be called by the command parser.
 
 ## Initialize Course
 
