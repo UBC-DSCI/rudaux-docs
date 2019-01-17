@@ -33,7 +33,7 @@ A configuration file should be included in the same directory where nbgrader ope
 ### Canvas
 
 <dl>
-  <dt><code>c.Canvas.course_url</code> - <em>str</em></dt>
+  <dt><code>c.Canvas.canvas_url</code> - <em>str</em></dt>
   <dd>
     The URL of your Canvas distribution.
     <p class='extra-dl-info'>
